@@ -20,12 +20,12 @@ export default {
         password: '12345678',
         database: 'macro-mall',
         // 自动建表
-        synchronize: true,
+        // synchronize: true,
         // 打印日志
         logging: true,
         // 字符集
         charset: 'utf8mb4',
-        entities: ['**/entity/*.entity{.ts,.js}'],
+        entities: '../entity/ums',
         // timezone: '+08:00',
       },
     },

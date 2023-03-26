@@ -13,9 +13,13 @@
     "@midwayjs/logger": "^2.14.0",
     "@midwayjs/typeorm": "^3.10.15",
     "@midwayjs/validate": "^3.0.0",
+    "class-transformer": "^0.5.1",
+    "crypto-js": "^4.1.1",
+    "jsonwebtoken": "^9.0.0",
+    "lodash": "^4.17.21",
     "md5": "^2.3.0",
     "mysql2": "^3.2.0",
-    "nanoid": "^4.0.1",
+    "nanoid": "^3.1.12",
     "typeorm": "^0.3.12"
   },
   "devDependencies": {

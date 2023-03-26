@@ -1,16 +1,19 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
-@Entity()
-export class User {
+
+@Entity({ name: 'ums_admin' })
+export default class SysUser {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({
-    name: 'username',
-    unique: true,
-    type: 'varchar',
-    length: 13,
-    comment: '用户名',
-  })
+  // @Column({
+  //   name: 'username',
+  //   unique: true,
+  //   type: 'varchar',
+  //   length: 13,
+  //   comment: '用户名',
+  // })
+  // username: string;
+  @Column({ unique: true })
   username: string;
 
   @Column({
@@ -42,13 +45,17 @@ export class User {
   note: string;
 
   @Column({
+    name: 'create_time',
     type: 'datetime',
+    nullable: true,
     comment: '创建时间',
   })
   createTime: string;
 
   @Column({
+    name: 'login_time',
     type: 'datetime',
+    nullable: true,
     comment: '最后登录时间',
   })
   loginTime: string;
