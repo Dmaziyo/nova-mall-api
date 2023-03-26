@@ -2,28 +2,14 @@
 
 ## QuickStart
 
-<!-- add docs here for user -->
+see [midway docs](https://midwayjs.org) for more detail.
 
-see [midway docs][midway] for more detail.
-
-### Development
-
-```bash
-$ npm i
-$ npm run dev
-$ open http://localhost:7001/
-```
-
-### Deploy
-
-```bash
-$ npm start
-```
-
-### npm scripts
-
-- Use `npm run lint` to check code style.
-- Use `npm test` to run unit test.
+## Trouble
+1. You must provide selection conditions in order to find a single row.
+typeorm4.x 版本中，查询参数需指定为 ` findOne({where: {xx:yy}}) instead of findOne({xx:yy})`
 
 
-[midway]: https://midwayjs.org
+## TODO
+- typeorm 中设置 `synchronize: true` 的影响
+- post 查询默认走 `application/json` 格式？
+- prettier 为什么没生效
