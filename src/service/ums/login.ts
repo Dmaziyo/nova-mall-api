@@ -1,9 +1,9 @@
-import {Inject, Provide} from "@midwayjs/core";
-import {Utils} from "../../common/utils";
-import {InjectEntityModel} from "@midwayjs/typeorm";
-import {BaseService} from "../base.service";
-import {Repository} from "typeorm";
-import SysUser from "../../entity/ums/user";
+import { Inject, Provide } from '@midwayjs/core';
+import { Utils } from '../../common/utils';
+import { InjectEntityModel } from '@midwayjs/typeorm';
+import { BaseService } from '../base.service';
+import { Repository } from 'typeorm';
+import SysUser from '../../entity/ums/user';
 import { isEmpty } from 'lodash';
 
 @Provide()
@@ -19,12 +19,12 @@ export class AdminVerifyService extends BaseService {
    * 返回null则账号密码有误，不存在该用户
    */
   async getLoginSign(username: string, password: string): Promise<string> {
-    console.log("getLoginSign", username, password);
+    console.log('getLoginSign', username, password);
     const user = await this.user.findOne({
       where: {
         username: username,
         status: 1,
-      }
+      },
     } as any);
     if (isEmpty(user)) {
       return null;

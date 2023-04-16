@@ -1,38 +1,33 @@
-import {ADMIN_PREFIX_URL, BaseController, NOAUTH_PREFIX_URL} from "../base.controller";
 import {
-  Get,
-  ALL,
-  Post,
-  Body,
-  Controller, Queries,
-} from '@midwayjs/decorator';
-import {LoginInfoDto} from "../../dto/ums/login";
-import {ResOp} from "../../interface";
+  ADMIN_PREFIX_URL,
+  BaseController,
+  // NOAUTH_PREFIX_URL,
+} from '../base.controller';
+import { Get, ALL, Post, Body, Controller } from '@midwayjs/decorator';
+import { LoginInfoDto } from '../../dto/ums/login';
+import { ResOp } from '../../interface';
 import { res } from '../../common/utils';
-import { AdminVerifyService } from "../../service/ums/login";
-import {Inject} from "@midwayjs/core";
-import {Validate} from "@midwayjs/validate";
-import {isEmpty} from "lodash";
+import { AdminVerifyService } from '../../service/ums/login';
+import { Inject } from '@midwayjs/core';
+import { Validate } from '@midwayjs/validate';
+import { isEmpty } from 'lodash';
 
-@Controller(`${ADMIN_PREFIX_URL}${NOAUTH_PREFIX_URL}/`, {
+@Controller(`${ADMIN_PREFIX_URL}/`, {
   tagName: 'AdminLogin',
   description: '后台登录控制器',
 })
 export class LoginController extends BaseController {
-
   @Inject()
   adminVerifyService: AdminVerifyService;
 
   @Get('/')
-  async home(@Queries() params) {
-
-    return 'Hello Midwayjs!' + params;
+  async home() {
+    return 'Hello Midwayjs! login';
   }
 
   @Post('/login')
   @Validate()
   async login(@Body(ALL) loginInfo: LoginInfoDto): Promise<ResOp> {
-    console.log('loginInfo', loginInfo)
     // const isSuccess = await this.adminVerifyService.checkImgCaptcha(
     //   loginInfo.captchaId,
     //   loginInfo.verifyCode

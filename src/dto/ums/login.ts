@@ -1,5 +1,5 @@
 import { Expose } from 'class-transformer';
-import {Rule, RuleType} from "@midwayjs/validate";
+import { Rule, RuleType } from '@midwayjs/validate';
 
 export class LoginInfoDto {
   @Rule(RuleType.string().required())
