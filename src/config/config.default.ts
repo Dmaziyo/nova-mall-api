@@ -10,6 +10,11 @@ export default {
     secret: 'jiechen-secret',
     expiresIn: '3d', // https://github.com/vercel/ms
   },
+  cors: {
+    origin: '*',
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH',
+    allowHeaders: 'Content-Type,Authorization',
+  },
   typeorm: {
     dataSource: {
       default: {

@@ -24,7 +24,7 @@ export class ProductController extends BaseController {
   async listCategory(): Promise<ResOp> {
     const categories = await this.categoryService.findAllCategory();
 
-    return res({ data: { categories } });
+    return res({ data: categories });
   }
 
   @Post('/')
@@ -35,6 +35,6 @@ export class ProductController extends BaseController {
     if (isEmpty(products)) {
       return res({ code: 20003 });
     }
-    return res({ data: { products } });
+    return res({ data: products });
   }
 }

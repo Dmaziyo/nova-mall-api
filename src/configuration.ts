@@ -7,6 +7,7 @@ import { join } from 'path';
 // import { NotFoundFilter } from './filter/notfound.filter';
 import { ReportMiddleware } from './middleware/report.middleware';
 import * as orm from '@midwayjs/typeorm';
+import * as crossDomain from '@midwayjs/cross-domain';
 
 @Configuration({
   imports: [
@@ -17,6 +18,7 @@ import * as orm from '@midwayjs/typeorm';
       enabledEnvironment: ['local'],
     },
     orm,
+    crossDomain,
   ],
   importConfigs: [join(__dirname, './config')],
 })
