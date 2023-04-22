@@ -1,7 +1,6 @@
 {
-  "name": "my-midway-project",
+  "name": "nova-mall-api",
   "version": "1.0.0",
-  "description": "",
   "private": true,
   "dependencies": {
     "@midwayjs/bootstrap": "^3.0.0",
@@ -56,6 +55,6 @@
     "type": "git",
     "url": ""
   },
-  "author": "anonymous",
+  "author": "jiechen257",
   "license": "MIT"
 }
